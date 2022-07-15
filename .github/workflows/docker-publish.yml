@@ -84,7 +84,19 @@ jobs:
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache-new
 
+      # Build and push tutorial image
+      - name: Build and push tutorial image
+        uses: docker/build-push-action@ad44023a93711e3deb337508980b4b5e9bcdc5dc
+        with:
+          context: .
+          file: Dockerfile.tutorial
+          push: true
+          tags: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:tutorial
+          labels: ${{ steps.meta.outputs.labels }}
+          cache-from: type=local,src=/tmp/.buildx-cache-new1
+          cache-to: type=local,dest=/tmp/.buildx-cache-new2
+
       - name: Move cache
         run: |
-          rm -rf /tmp/.buildx-cache 
+          rm -rf /tmp/.buildx-cache
           mv /tmp/.buildx-cache-new /tmp/.buildx-cache
