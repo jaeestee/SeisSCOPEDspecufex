@@ -46,6 +46,7 @@ jobs:
         with:
           path: |
             /tmp/.buildx-cache
+            /tmp/.buildx-cache-new1
           key: ${{ runner.os }}-buildx-${{ github.sha }}
           restore-keys: |
             ${{ runner.os }}-buildx-
