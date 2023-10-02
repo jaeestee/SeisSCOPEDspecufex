@@ -1,5 +1,5 @@
 
-FROM ghcr.io/seisscoped/container-base
+FROM ghcr.io/jaeestee/container-base
 
 LABEL maintainer="Nate Groebner"
 
