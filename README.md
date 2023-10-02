@@ -4,17 +4,17 @@ This repository contains the code necessary to build the SCOPED containers for S
 
 Two containers are built by this repository:
 
-- `ghcr.io/seisscoped/specufex:latest`
+- `ghcr.io/jaeestee/specufex:latest`
 
-- `ghcr.io/seisscoped/specufex:tutorial`
+- `ghcr.io/jaeestee/specufex:tutorial`
 
 These are the same except that the `tutorial` container contains code and data to fit a subset of the data used for the original Specufex paper, [Holtzman, et al., Science Advances (2018)](https://advances.sciencemag.org/content/4/5/eaao2929)
 
 The containers are set up to run a Jupyter Lab server with the appropriate environment and dependencies for Specufex. To run the tutorial, first pull it from the registry and then start it up. Using the terminal:
 
 ```bash
-docker pull ghcr.io/seisscoped/specufex:tutorial
-docker run -p 8888:8888 ghcr.io/seisscoped/specufex:tutorial
+docker pull ghcr.io/jaeestee/specufex:tutorial
+docker run -p 8888:8888 ghcr.io/jaeestee/specufex:tutorial
 ```
 
 Once the container starts it will print out a bunch of stuff, ending with something like
@@ -34,7 +34,7 @@ To use the container with your own data, you have to either pull the data into a
 ```bash
 docker run -v path/to/your/local/directory:/home/specufex/data \
  -p 8888:8888 \
- ghcr.io/seisscoped/specufex:latest
+ ghcr.io/jaeestee/specufex:latest
 ```
 
 When you open the server in your browser, you will see your directory and its contents in the file pane on the left hand side of the page.
