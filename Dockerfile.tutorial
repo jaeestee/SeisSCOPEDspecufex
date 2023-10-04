@@ -1,5 +1,5 @@
 
-FROM ghcr.io/jaeestee/tacc-container-base:jupyter
+FROM docker://jaeestee/tacc-container-base:jupyter
 
 LABEL maintainer="Nate Groebner"
 
